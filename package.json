@@ -1,0 +1,29 @@
+{
+  "name": "dinobot",
+  "version": "0.4.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danie Hesp",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/rest": "^0.5.0",
+    "@discordjs/voice": "^0.10.0",
+    "canvas": "^2.9.0",
+    "discord-player": "^5.2.2",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V0IDM4STER/DinoBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/V0IDM4STER/DinoBot/issues"
+  },
+  "homepage": "https://github.com/V0IDM4STER/DinoBot#readme",
+  "description": "A Dinosaur bot for discord. Does everything from slash commands to playing music."
+}
