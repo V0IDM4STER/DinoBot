@@ -14,7 +14,7 @@ module.exports = {
                     new MessageButton().setCustomId("role-997307674687451206").setStyle("PRIMARY").setLabel("League of Legends"),
                     new MessageButton().setCustomId("role-997308684260622416").setStyle("PRIMARY").setLabel("Valorant"),
                     new MessageButton().setCustomId("role-997308759355424799").setStyle("PRIMARY").setLabel("Roblox"),
-                    new MessageButton().setCustomId("role-997308817433968700").setStyle("PRIMARY").setLabel("Teamfight Tactics")
+                    new MessageButton().setCustomId("role-997308817433968700").setStyle("PRIMARY").setLabel("Teamfight Tactics"),
                 ])
             ]
         })
