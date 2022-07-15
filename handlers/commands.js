@@ -1,7 +1,5 @@
 const { getFiles } = require("../util/functions")
 const fs = require("fs")
-const { ModalSubmitFieldsResolver } = require("discord.js")
-
 
 module.exports = (bot, reload) => {
     const {client} = bot
