@@ -11,11 +11,11 @@ module.exports = {
             ],
             components: [
                 new MessageActionRow().addComponents([
-                    new MessageButton().setCustomId("role-").setStyle("PRIMARY").setLabel("PC"),
-                    new MessageButton().setCustomId("role-").setStyle("PRIMARY").setLabel("Laptop"),
-                    new MessageButton().setCustomId("role-").setStyle("PRIMARY").setLabel("Xbox"),
-                    new MessageButton().setCustomId("role-").setStyle("PRIMARY").setLabel("Playstation"),
-                    new MessageButton().setCustomId("role-").setStyle("PRIMARY").setLabel("Nintendo"),
+                    new MessageButton().setCustomId("role-997313636164968478").setStyle("PRIMARY").setLabel("PC"),
+                    new MessageButton().setCustomId("role-997313692104409148").setStyle("PRIMARY").setLabel("Laptop"),
+                    new MessageButton().setCustomId("role-997313719929417849").setStyle("PRIMARY").setLabel("Xbox"),
+                    new MessageButton().setCustomId("role-997313794315391026").setStyle("PRIMARY").setLabel("Playstation"),
+                    new MessageButton().setCustomId("role-997313751126659152").setStyle("PRIMARY").setLabel("Nintendo"),
                 ])
             ]
         })
