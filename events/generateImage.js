@@ -15,53 +15,52 @@ const av = {
     y: 170
 }
 
-module.exports = {
-    name: "generateImage",
-    run: async (bot, member) => {
-        let username = member.user.username // get new member username
-        let discrim = member.user.discriminator // get new member #
-        let avatarURL = member.user.displayAvatarURL({format: "png", dynamic: false, size: av.size}) // get new member profile pic
+const generateImage = async (member) => {
+    let username = member.user.username // get new member username
+    let discrim = member.user.discriminator // get new member #
+    let avatarURL = member.user.displayAvatarURL({format: "png", dynamic: false, size: av.size}) // get new member profile pic
 
-        const canvas = Canvas.createCanvas(dim.width, dim.height)
-        const ctx = canvas.getContext("2d")
+    const canvas = Canvas.createCanvas(dim.width, dim.height)
+    const ctx = canvas.getContext("2d")
 
-        // draw in background
-        const backimg = await Canvas.loadImage(background)
-        ctx.drawImage(backimg, 0, 0)
+    // draw in background
+    const backimg = await Canvas.loadImage(background)
+    ctx.drawImage(backimg, 0, 0)
 
-        // draw black tinted box
-        ctx.fillStyle = "rgba(0,0,0,0.8)"
-        ctx.fillRect(dim.margin, dim.margin, dim.width - 2 * dim.margin, dim.height - 2 * dim.margin)
+    // draw black tinted box
+    ctx.fillStyle = "rgba(0,0,0,0.8)"
+    ctx.fillRect(dim.margin, dim.margin, dim.width - 2 * dim.margin, dim.height - 2 * dim.margin)
 
-        const avimg = await Canvas.loadImage(avatarURL)
-        ctx.save() // save previous work
+    const avimg = await Canvas.loadImage(avatarURL)
+    ctx.save() // save previous work
 
-        // make avatar a circle for welcome image
-        ctx.beginPath()
-        ctx.arc(av.x + av.size / 2, av.y + av.size / 2, av.size / 2, 0, Math.PI * 2, true)
-        ctx.closePath()
-        ctx.clip()
+    // make avatar a circle for welcome image
+    ctx.beginPath()
+    ctx.arc(av.x + av.size / 2, av.y + av.size / 2, av.size / 2, 0, Math.PI * 2, true)
+    ctx.closePath()
+    ctx.clip()
 
-        ctx.drawImage(avimg, av.x, av.y)
-        ctx.restore() // reload previous work
+    ctx.drawImage(avimg, av.x, av.y)
+    ctx.restore() // reload previous work
 
-        // write in text
-        ctx.fillStyle = "white"
-        ctx.textAlign = "center"
+    // write in text
+    ctx.fillStyle = "white"
+    ctx.textAlign = "center"
 
-        // draw in welcome
-        ctx.font = "50px Agency FB"
-        ctx.fillText("Welcome", dim.width / 2, dim.margin + 70)
+    // draw in welcome
+    ctx.font = "50px Agency FB"
+    ctx.fillText("Welcome", dim.width / 2, dim.margin + 70)
 
-        // draw in username
-        ctx.font = "60px Agency FB"
-        ctx.fillText(username + discrim, dim.width / 2, dim.height - dim.margin - 125) 
+    // draw in username
+    ctx.font = "60px Agency FB"
+    ctx.fillText(username + discrim, dim.width / 2, dim.height - dim.margin - 125) 
 
-        // draw in to the server
-        ctx.font = "40px Agency FB"
-        ctx.fillText("to the server!", dim.width / 2, dim.height - dim.margin - 50)
+    // draw in to the server
+    ctx.font = "40px Agency FB"
+    ctx.fillText("to the server!", dim.width / 2, dim.height - dim.margin - 50)
 
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), "welcome.png")
-        return attachment
-    }
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), "welcome.png")
+    return attachment
 }
+
+module.exports = generateImage

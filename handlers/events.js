@@ -54,8 +54,4 @@ function initEvents(bot) {
     client.on("interactionCreate", (interaction) => {
         triggerEventHandler(bot, "interactionCreate", interaction)
     })
-
-    client.on("generateImage", (member) => {
-        triggerEventHandler(bot, "generateImage", member)
-    })
 }
