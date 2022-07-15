@@ -1,5 +1,5 @@
 module.exports = {
-    name: "gameselect",
+    name: "game",
     run: async (bot, interaction, parameters) => {
         const roleId = parameters[0]
         if (!interaction.guild)
